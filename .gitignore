@@ -1,3 +1,4 @@
 __pycache__
 frontmatter/__pycache__
 *.swp
+*.pyc
