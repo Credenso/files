@@ -54,3 +54,13 @@ def update_file(updates : dict, file_path : str) -> None:
 
 def delete_file(file_path : str) -> None:
     os.remove(file_path)
+
+def append_file(file_path : str, text : str) -> None:
+    task = load(file_path)
+    if not task.get('type').startswith('text'):
+        print('Appending only supported with plaintext!')
+        return
+
+    with open(file_path, "a") as file:
+        file.write("\n")
+        file.write(text)
